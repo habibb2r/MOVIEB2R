@@ -1,0 +1,50 @@
+.bodyget {
+    padding: 0;
+    margin: 50px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+  }
+  .hi {
+    color: hsl(0, 16%, 81%);
+    font-size: 70px!important;
+    font-weight: bold!important;
+    font-family: monospace;
+    letter-spacing: 7px!important;
+    cursor: pointer;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  
+  .hi {
+    padding: 64px;
+    background: linear-gradient(to right, hsl(0, 100%, 49%) 0, hsl(323, 96%, 48%) 10%, hsl(186, 75%, 72%) 50%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 5s infinite linear;
+  }
+  
+  @keyframes shine {
+    0% {
+      background-position: 0;
+    }
+    60% {
+      background-position: 600px;
+    }
+    100% {
+      background-position: 600px;
+    }
+  }
+  @media only screen and (max-width: 600px) {
+    .hi {
+        color: hsl(0, 0%, 28%);
+        font-size: 30px!important;
+        font-weight: bold!important;
+        font-family: monospace;
+        letter-spacing: 7px!important;
+        cursor: pointer;
+        text-transform: uppercase;
+        text-align: center;
+      }
+  }
