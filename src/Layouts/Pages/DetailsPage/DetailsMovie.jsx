@@ -6,8 +6,6 @@ import {BiTimer} from 'react-icons/bi'
 import Marquee from "react-fast-marquee";
 // import useCredits from "../../../Hooks/useCredits";
 
-
-
 const DetailsMovie = () => {
     const id = useParams();
     const[info, credits, creditloading, ]= useDetails(id.id);
