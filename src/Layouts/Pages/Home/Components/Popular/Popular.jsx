@@ -4,8 +4,11 @@ import Title from "../../../../../ReUsable/Title";
 import {AiTwotoneStar, AiTwotoneHeart} from 'react-icons/ai'
 import {FaHeart} from 'react-icons/fa6'
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addBookMarks } from "../../../../../Redux/slices/bookMarkSlice";
 
 const Popular = () => {
+    const dispatch = useDispatch()
     const [popular, loading, ] = usePopular(1);
 
    
@@ -32,7 +35,7 @@ const Popular = () => {
                             </div>
                           <div className="card-actions justify-evenly items-center">
                             <Link to={`/details/${item.id}`} className="btn bg-green-400 text-black">Watch info</Link>
-                            <button className="text-3xl text-yellow-400"><FaHeart/></button>
+                            <button onClick={()=>dispatch(addBookMarks(item))} className="text-3xl text-yellow-400"><FaHeart/></button>
                           </div>
                         </div>
                       </div>)
