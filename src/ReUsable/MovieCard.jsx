@@ -2,6 +2,7 @@ import { AiTwotoneHeart, AiTwotoneStar } from "react-icons/ai";
 import { FaHeart } from "react-icons/fa6";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { addBookMarks } from "../Redux/slices/bookMarkSlice";
 
 
 const MovieCard = ({item}) => {
