@@ -1,10 +1,12 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Title from "../../../ReUsable/Title";
 import { Link } from "react-router-dom";
 import {FaTrash} from 'react-icons/fa'
+import { removeBookMarks } from "../../../Redux/slices/bookMarkSlice";
 
 
 const FavoriteList = () => {
+    const dispatch = useDispatch();
     const {bookMarks} = useSelector(state => state.bookMarkSlice)
     console.log(bookMarks)
     return (
@@ -27,7 +29,7 @@ const FavoriteList = () => {
 
                         <div className="flex flex-col justify-center items-center gap-5">
                             <Link className="btn bg-green-500">Watch</Link>
-                            <button className="text-3xl text-red-300"><FaTrash/></button>
+                            <button onClick={()=> dispatch(removeBookMarks(item)) } className="text-3xl text-red-300"><FaTrash/></button>
                         </div>
                     </div>
                     )

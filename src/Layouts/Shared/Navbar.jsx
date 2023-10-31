@@ -18,6 +18,7 @@ const Navbar = () => {
             <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box  text-2xl w-52">
               <li><NavLink to='/'>Home</NavLink></li>
               <li>
+                <a></a>
                 <a>Movies</a>
                 <ul className="p-2">
                 <li><NavLink to='/popular'>Popular</NavLink></li>
@@ -45,6 +46,7 @@ const Navbar = () => {
                 </ul>
               </details>
             </li>
+           
             <li><a>TV Shows</a></li>
           </ul>
         </div>
