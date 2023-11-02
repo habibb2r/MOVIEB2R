@@ -3,7 +3,6 @@ import { useQuery } from "@tanstack/react-query";
 
 const usePopular = (num) => {
   const key = import.meta.env.VITE_AUTHKEYMOVIE
-  console.log(num)
     const {data : popular= [],  isLoading: loading, refetch } = useQuery({
         queryKey: ['popular'],
         queryFn: async()=>{

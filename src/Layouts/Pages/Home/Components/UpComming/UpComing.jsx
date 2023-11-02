@@ -5,7 +5,6 @@ import useUpcommimg from "../../../../../Hooks/useUpcommimg";
 
 const UpComing = () => {
     const [upcoming,loading, ] = useUpcommimg();
-    console.log(upcoming)
     return (
         <div className="py-10">
             <Title title='upcoming movies'></Title>
