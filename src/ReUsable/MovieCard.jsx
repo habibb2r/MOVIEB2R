@@ -3,12 +3,16 @@ import { FaHeart } from "react-icons/fa6";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { addBookMarks } from "../Redux/slices/bookMarkSlice";
+import { useContext } from "react";
+import { AuthContext } from "../Firebase/AuthProvider";
 
 
 const MovieCard = ({item}) => {
+    const {user} = useContext(AuthContext)
     const dispatch = useDispatch()
     const handleAdd = (item)=>{
-        dispatch(addBookMarks(item))
+        const mainItem = {email : user?.email, movie: item.title, movie_id: item.id, picture : item.poster_path || item.backdrop_path, rate : item.vote_average, total_vote: item.vote_count, release : item.release_date}
+        dispatch(addBookMarks(mainItem))
        }
     return (
         <div className="card bg-black shadow-xl">

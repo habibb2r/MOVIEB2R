@@ -1,7 +1,15 @@
 import { createSlice } from '@reduxjs/toolkit'
 import Swal from 'sweetalert2';
+import useBookMarkList from '../../Hooks/useBookMarkList';
+import { useComputed } from '@preact/signals';
+import { useContext } from 'react';
+import { AuthContext } from '../../Firebase/AuthProvider';
+import axios from 'axios';
+
+
 
 const initialState = {
+  
     bookMarks: [],
 }
 
@@ -10,42 +18,46 @@ const bookMarkSlice = createSlice({
     initialState,
     reducers : {
         addBookMarks : (state, {payload})=> {
-            if(state.bookMarks.find(item => item.id == payload.id)){
-                const Toast = Swal.mixin({
-                    toast: true,
-                    position: 'top-end',
-                    showConfirmButton: false,
-                    timer: 2000,
-                    timerProgressBar: true,
-                    didOpen: (toast) => {
-                      toast.addEventListener('mouseenter', Swal.stopTimer)
-                      toast.addEventListener('mouseleave', Swal.resumeTimer)
-                    }
-                  })
+          axios.post('http://localhost:5000/addBookMark', payload)
+          .then(res => console.log(res));
+            
+            // if(state.bookMarks.find(item => item.id == payload.id)){
+            //   console.log(payload)
+            //     const Toast = Swal.mixin({
+            //         toast: true,
+            //         position: 'top-end',
+            //         showConfirmButton: false,
+            //         timer: 2000,
+            //         timerProgressBar: true,
+            //         didOpen: (toast) => {
+            //           toast.addEventListener('mouseenter', Swal.stopTimer)
+            //           toast.addEventListener('mouseleave', Swal.resumeTimer)
+            //         }
+            //       })
                   
-                  Toast.fire({
-                    icon: 'error',
-                    title: 'Already added'
-                  })
-            }else{
-                state.bookMarks.push(payload)
-                const Toast = Swal.mixin({
-                    toast: true,
-                    position: 'top-end',
-                    showConfirmButton: false,
-                    timer: 2000,
-                    timerProgressBar: true,
-                    didOpen: (toast) => {
-                      toast.addEventListener('mouseenter', Swal.stopTimer)
-                      toast.addEventListener('mouseleave', Swal.resumeTimer)
-                    }
-                  })
+            //       Toast.fire({
+            //         icon: 'error',
+            //         title: 'Already added'
+            //       })
+            // }else{
+            //     state.bookMarks.push(payload)
+            //     const Toast = Swal.mixin({
+            //         toast: true,
+            //         position: 'top-end',
+            //         showConfirmButton: false,
+            //         timer: 2000,
+            //         timerProgressBar: true,
+            //         didOpen: (toast) => {
+            //           toast.addEventListener('mouseenter', Swal.stopTimer)
+            //           toast.addEventListener('mouseleave', Swal.resumeTimer)
+            //         }
+            //       })
                   
-                  Toast.fire({
-                    icon: 'success',
-                    title: 'Added to Bookmark'
-                  })
-            }
+            //       Toast.fire({
+            //         icon: 'success',
+            //         title: 'Added to Bookmark'
+            //       })
+            // }
             
         },
         removeBookMarks : (state, {payload})=>{

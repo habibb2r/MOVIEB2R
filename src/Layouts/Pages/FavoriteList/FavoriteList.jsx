@@ -3,12 +3,15 @@ import Title from "../../../ReUsable/Title";
 import { Link } from "react-router-dom";
 import {FaTrash} from 'react-icons/fa'
 import { removeBookMarks } from "../../../Redux/slices/bookMarkSlice";
+import useBookMarkList from "../../../Hooks/useBookMarkList";
 
 
 const FavoriteList = () => {
     const dispatch = useDispatch();
+    const [bookmarks] = useBookMarkList();
+    console.log(bookmarks)
     const {bookMarks} = useSelector(state => state.bookMarkSlice)
-    console.log(bookMarks)
+    // console.log(bookMarks)
     return (
         <div>
             <Title title={'My FavoriteList'}></Title>
