@@ -3,7 +3,8 @@ import { useForm } from "react-hook-form";
 import ani from './signup.json'
 import { useContext } from "react";
 import { AuthContext } from "../../../Firebase/AuthProvider";
-
+import axios from "axios";
+import Swal from "sweetalert2";
 
 const Signup = () => {
     const {user, createUser,updateUser} = useContext(AuthContext)
@@ -17,7 +18,43 @@ const Signup = () => {
             console.log(user)
             updateUser(data.Name, imgURL)
             .then(()=>{
-                reset();
+                const dataObj = {
+                    name : data.Name,
+                    email : data.Email,
+                    picture : imgURL
+                }
+                axios.post('http://localhost:5000/addUser', dataObj)
+                .then(res => {
+                    if(res.data.Exist == false){
+                        const Toast = Swal.mixin({
+                            toast: true,
+                            position: 'top-end',
+                            showConfirmButton: false,
+                            timer: 2000,
+                            timerProgressBar: true,
+                            didOpen: (toast) => {
+                              toast.addEventListener('mouseenter', Swal.stopTimer)
+                              toast.addEventListener('mouseleave', Swal.resumeTimer)
+                            }
+                          })
+                          
+                          Toast.fire({
+                            icon: 'success',
+                            title: `Welcome, ${data.Name}`
+                          })
+                        reset();
+                    }else{
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'error',
+                            title: 'Already Registered',
+                            showConfirmButton: false,
+                            timer: 1500
+                          })
+                    }
+                   
+                })
+                
             })
             
         })

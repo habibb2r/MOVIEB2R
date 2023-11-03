@@ -14,7 +14,7 @@ import {MdVideoCameraBack} from 'react-icons/md'
 const Banner = () => {
     const [trendings, loading, refetch] = useBanner();
     refetch();
-    //  console.log(trendings, loading)
+     console.log(trendings, loading)
     
     return (
         <>

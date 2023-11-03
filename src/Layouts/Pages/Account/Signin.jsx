@@ -6,6 +6,7 @@ import login from './login.json'
 import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import { AuthContext } from '../../../Firebase/AuthProvider';
+import axios from 'axios';
 
 const Signin = () => {
     const {signin,signInGoogle,} = useContext(AuthContext)
@@ -23,7 +24,16 @@ const Signin = () => {
   }
   const handleGoogle = () =>{
     signInGoogle()
-    .then(result => console.log(result))
+    .then(result => {
+        const userData = {
+            name : result.user.displayName,
+            email : result.user.email,
+            picture : result.user.photoURL
+        }
+        axios.post('http://localhost:5000/addUser', userData)
+        .then(res=> 
+            console.log(res))
+    })
   }
   console.log(errors);
     return (
