@@ -12,8 +12,8 @@ const UpComing = () => {
                   {
                     loading ? <span className="loading loading-bars loading-lg justify-center"></span> : 
                     upcoming.results.map(movie=>
-                        <div key={movie.id} className="card w-96 bg-base-100 shadow-md shadow-indigo-300 mx-5 ">
-                        <figure><img className='h-[500px]' src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt="Shoes" /></figure>
+                        <div key={movie.id} className="card w-96 bg-base-100 shadow-md ">
+                        <figure><img className='h-[500px] rounded-md' src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt="Shoes" /></figure>
                         
                       </div>
                       )
