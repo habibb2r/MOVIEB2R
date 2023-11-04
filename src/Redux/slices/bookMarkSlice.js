@@ -8,11 +8,11 @@ const initialState = {
   
     bookMarks: [],
 }
-
 const bookMarkSlice = createSlice({
     name: 'bookMarkSlice',
     initialState,
     reducers : {
+       
         addBookMarks : (state, {payload})=> {
           
           axios.post('http://localhost:5000/addBookMark', payload)
