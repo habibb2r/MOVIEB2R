@@ -10,7 +10,7 @@ import { motion } from "framer-motion"
 
 
 const MovieCard = ({item}) => {
-    console.log(item)
+    // console.log(item)
     const {user} = useContext(AuthContext)
     const [, , , refetch] = useBookMarkList()
     const dispatch = useDispatch()
@@ -27,10 +27,10 @@ const MovieCard = ({item}) => {
           repeat: Infinity,
           repeatType: 'reverse',
           ease: 'easeInOut',
-        }} className=" mx-auto px-3 rounded-md bg-[#2d0c50] shadow-xl relative">
+        }} className=" mx-auto px-3 rounded-md bg-[#2d0c50] shadow-xl relative pb-[5%]">
                         <figure><img className="h-[250px] rounded-md shadow-lg shadow-[#296d8d]" src={`https://image.tmdb.org/t/p/original${item.backdrop_path? item.backdrop_path : item.poster_path}`} alt="Shoes" /></figure>
                         <div className="px-[5%] py-[4%] text-center  text-red-500">
-                            <motion.h2 initial={{color: '#5bf0fb'}} animate={{color: '#fd3ae3'}} transition={{duration: 2, repeat: Infinity, repeatType: 'reverse', ease: 'easeInOut'}} className="font-semibold text-2xl">{item.title}</motion.h2>
+                            <motion.h2 initial={{color: '#5bf0fb'}} animate={{color: '#fd3ae3'}} transition={{duration: 2, repeat: Infinity, repeatType: 'reverse', ease: 'easeInOut'}} className="font-semibold text-2xl py-[5%]">{item.title}</motion.h2>
                             <div className="flex justify-center items-center gap-3 my-4">
                                     <motion.div initial={{borderColor: '#f506f9'}} animate={{borderColor: '#ff0505'}} transition={{duration: 2, repeat: Infinity, repeatType: 'reverse', ease: 'easeInOut'}} className="absolute top-[200px] left-[5%] bg-black bg-opacity-20 backdrop-blur-md px-[2%] py-2 rounded-lg flex justify-center items-center gap-1 border-x-2">
                                         <p className="text-info font-semibold">{Math.round(item.vote_average)}/10</p>
@@ -42,8 +42,8 @@ const MovieCard = ({item}) => {
                                     </motion.div>
                             </div>
                           <div className="card-actions justify-evenly items-center">
-                            <Link to={`/details/${item.id}`} className="btn bg-green-400 text-black">Watch info</Link>
-                            <button onClick={()=>handleAdd(item)} className="text-3xl text-yellow-400"><FaHeart/></button>
+                            <Link to={`/details/${item.id}`}><motion.span initial={{borderColor: '#fd3ae3'}} animate={{borderColor: '#ff0000'}} transition={{duration: 2, repeat: Infinity, repeatType: 'reverse', ease: 'easeInOut'}} className="bg-black text-white px-4 py-2 rounded-xl backdrop-blur-md bg-opacity-50 absolute bottom-[4%] left-[4%] border-y-2 font-semibold">Watch info</motion.span></Link>
+                            <button onClick={()=>handleAdd(item)} className="text-3xl text-yellow-400 absolute bottom-[5%] right-[4%]"><FaHeart/></button>
                           </div>
                         </div>
             </motion.div>
