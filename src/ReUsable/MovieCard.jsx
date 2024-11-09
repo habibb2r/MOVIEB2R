@@ -10,6 +10,7 @@ import { motion } from "framer-motion"
 
 
 const MovieCard = ({item}) => {
+    console.log(item)
     const {user} = useContext(AuthContext)
     const [, , , refetch] = useBookMarkList()
     const dispatch = useDispatch()
@@ -26,19 +27,19 @@ const MovieCard = ({item}) => {
           repeat: Infinity,
           repeatType: 'reverse',
           ease: 'easeInOut',
-        }} className=" mx-auto px-3 rounded-md bg-[#2d0c50] shadow-xl">
+        }} className=" mx-auto px-3 rounded-md bg-[#2d0c50] shadow-xl relative">
                         <figure><img className="h-[250px] rounded-md shadow-lg shadow-[#296d8d]" src={`https://image.tmdb.org/t/p/original${item.backdrop_path? item.backdrop_path : item.poster_path}`} alt="Shoes" /></figure>
-                        <div className="px-5 py-4 text-center  text-red-500">
-                            <h2 className="font-semibold text-xl">{item.original_title}</h2>
+                        <div className="px-[5%] py-[4%] text-center  text-red-500">
+                            <motion.h2 initial={{color: '#5bf0fb'}} animate={{color: '#fd3ae3'}} transition={{duration: 2, repeat: Infinity, repeatType: 'reverse', ease: 'easeInOut'}} className="font-semibold text-2xl">{item.title}</motion.h2>
                             <div className="flex justify-center items-center gap-3 my-4">
-                                    <div className="bg-neutral px-[2%] py-2 rounded-lg flex justify-center items-center gap-1 shadow-md shadow-purple-500">
-                                        <p className="text-info">Ratings: {item.vote_average}</p>
+                                    <motion.div initial={{borderColor: '#f506f9'}} animate={{borderColor: '#ff0505'}} transition={{duration: 2, repeat: Infinity, repeatType: 'reverse', ease: 'easeInOut'}} className="absolute top-[200px] left-[5%] bg-black bg-opacity-20 backdrop-blur-md px-[2%] py-2 rounded-lg flex justify-center items-center gap-1 border-x-2">
+                                        <p className="text-info font-semibold">{Math.round(item.vote_average)}/10</p>
                                         <AiTwotoneStar className="text-accent"></AiTwotoneStar>
-                                    </div>
-                                    <div className="bg-neutral px-3 py-2 rounded-lg flex justify-center items-center gap-1 shadow-md shadow-purple-500">
-                                        <p className="text-info">People Liked : {item.vote_count}</p>
+                                    </motion.div>
+                                    <motion.div initial={{borderColor: '#ff0505'}} animate={{borderColor: '#78de12'}} transition={{duration: 2, repeat: Infinity, repeatType: 'reverse', ease: 'easeInOut'}} className="absolute top-[200px] right-[5%] bg-black bg-opacity-20 backdrop-blur-md px-3 py-2 rounded-lg flex justify-center items-center gap-1 border-x-2">
+                                        <p className="text-info font-semibold">Liked : {item.vote_count}</p>
                                         <AiTwotoneHeart className="text-red-700"></AiTwotoneHeart>
-                                    </div>
+                                    </motion.div>
                             </div>
                           <div className="card-actions justify-evenly items-center">
                             <Link to={`/details/${item.id}`} className="btn bg-green-400 text-black">Watch info</Link>
