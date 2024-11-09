@@ -6,6 +6,7 @@ import { addBookMarks } from "../Redux/slices/bookMarkSlice";
 import { useContext } from "react";
 import { AuthContext } from "../Firebase/AuthProvider";
 import useBookMarkList from "../Hooks/useBookMarkList";
+import { motion } from "framer-motion"
 
 
 const MovieCard = ({item}) => {
@@ -18,7 +19,14 @@ const MovieCard = ({item}) => {
         refetch()
        }
     return (
-        <div className="mx-auto px-3 rounded-md bg-[#2d0c50] shadow-xl">
+        <motion.div  initial={{ boxShadow: '0px 0px 15px 0px #bb00ff' }}
+        animate={{ boxShadow: '0px 0px 15px 0px #ff295e' }}
+        transition={{
+          duration: 2,
+          repeat: Infinity,
+          repeatType: 'reverse',
+          ease: 'easeInOut',
+        }} className=" mx-auto px-3 rounded-md bg-[#2d0c50] shadow-xl">
                         <figure><img className="h-[230px] rounded-md shadow-lg shadow-[#296d8d]" src={`https://image.tmdb.org/t/p/original${item.backdrop_path? item.backdrop_path : item.poster_path}`} alt="Shoes" /></figure>
                         <div className="px-5 py-4 text-center  text-red-500">
                             <h2 className="font-semibold text-2xl">{item.original_title}</h2>
@@ -37,7 +45,7 @@ const MovieCard = ({item}) => {
                             <button onClick={()=>handleAdd(item)} className="text-3xl text-yellow-400"><FaHeart/></button>
                           </div>
                         </div>
-            </div>
+            </motion.div>
     );
 };
 
