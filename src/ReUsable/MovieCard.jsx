@@ -27,11 +27,11 @@ const MovieCard = ({item}) => {
           repeatType: 'reverse',
           ease: 'easeInOut',
         }} className=" mx-auto px-3 rounded-md bg-[#2d0c50] shadow-xl">
-                        <figure><img className="h-[230px] rounded-md shadow-lg shadow-[#296d8d]" src={`https://image.tmdb.org/t/p/original${item.backdrop_path? item.backdrop_path : item.poster_path}`} alt="Shoes" /></figure>
+                        <figure><img className="h-[250px] rounded-md shadow-lg shadow-[#296d8d]" src={`https://image.tmdb.org/t/p/original${item.backdrop_path? item.backdrop_path : item.poster_path}`} alt="Shoes" /></figure>
                         <div className="px-5 py-4 text-center  text-red-500">
-                            <h2 className="font-semibold text-2xl">{item.original_title}</h2>
-                            <div className="flex justify-center items-center gap-4 my-4">
-                                    <div className="bg-neutral px-3 py-2 rounded-lg flex justify-center items-center gap-1 shadow-md shadow-purple-500">
+                            <h2 className="font-semibold text-xl">{item.original_title}</h2>
+                            <div className="flex justify-center items-center gap-3 my-4">
+                                    <div className="bg-neutral px-[2%] py-2 rounded-lg flex justify-center items-center gap-1 shadow-md shadow-purple-500">
                                         <p className="text-info">Ratings: {item.vote_average}</p>
                                         <AiTwotoneStar className="text-accent"></AiTwotoneStar>
                                     </div>

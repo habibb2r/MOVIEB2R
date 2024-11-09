@@ -11,7 +11,7 @@ const Popular = () => {
         <div className="">
             <Title title="Popular Now"></Title>
             <div className="text-center">
-                <div className="grid md:grid-cols-3 gap-6 md:gap-5 px-2">
+                <div className="grid md:grid-cols-3  gap-6 lg:gap-10 px-[2%]">
                     {
                         loading ? <span className="loading loading-bars w-full"></span> :
                         popular.results.slice(0,6).map(item => <MovieCard key={item.id} item={item}></MovieCard>)
