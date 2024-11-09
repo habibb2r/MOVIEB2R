@@ -9,7 +9,7 @@ const Navbar = () => {
   }
     return (
     
-        <div className="navbar fixed max-w-screen-2xl py-3 md:py-4 font-mono  bg-opacity-30  bg-base-100 z-20 mx-auto">
+        <div className="navbar fixed px-[2%] py-[3%] md:py-[1.5%] font-mono  bg-opacity-30  bg-base-100 z-20 mx-auto">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -30,7 +30,7 @@ const Navbar = () => {
               <li><a>TV Shows</a></li>
             </ul>
           </div>
-          <img className='h-[60px] md:h-[90px]' src={logo} alt="" />
+          <img className='h-[60px] md:h-[80px]' src={logo} alt="" />
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1 text-xl">

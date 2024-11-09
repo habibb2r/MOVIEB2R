@@ -18,7 +18,7 @@ const Banner = () => {
     
     return (
         <>
-        <div className='text-center'>
+        <div className='text-center h-[100vh]'>
         <Swiper
           spaceBetween={30}
           centeredSlides={true}
@@ -38,8 +38,8 @@ const Banner = () => {
           trendings.results.map(trending => 
             <SwiperSlide key={trending.id} trending={trending}>
                 <div className='relative md:h-[88vh] '>
-                    <img className='md:w-[100vw] slider-img' src={`https://image.tmdb.org/t/p/original${trending.backdrop_path}`} alt="" />
-                    <img className='md:w-[100vw] md:hidden' src={`https://image.tmdb.org/t/p/original${trending.poster_path}`} alt="" />
+                    <img className='md:w-[100vw] slider-img ' src={`https://image.tmdb.org/t/p/original${trending.backdrop_path}`} alt="" />
+                    <img className='md:w-[100vw] md:hidden ' src={`https://image.tmdb.org/t/p/original${trending.poster_path}`} alt="" />
                         <div className='absolute top-[30%] md:top-[40%] z-20 font-mono md:w-2/5 left-[15%] md:left-[10%] flex flex-col gap-5 text-left px-5 md:px-0'>
                             <h2 className='text-2xl font-semibold text-red-700'><span className='text-accent'>|</span> Trendings</h2>
                             <h2 className=' text-4xl font-semibold  text-info'>{trending.original_title}</h2>
