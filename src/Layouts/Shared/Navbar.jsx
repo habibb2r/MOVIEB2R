@@ -38,9 +38,9 @@ const Navbar = () => {
             <li tabIndex={0}>
               <details>
                 <summary>Movies</summary>
-                <ul className="p-2">
+                <ul className="p-2 w-[200px]">
                   <li><NavLink to='/popular'>Popular</NavLink></li>
-                  <li><NavLink to='/popular'>Popular</NavLink></li>
+                  <li><NavLink to='/popular'>Top Rated</NavLink></li>
                   <li><NavLink to='/popular'>Popular</NavLink></li>
                 
                 </ul>
