@@ -3,10 +3,12 @@ import usePopular from "../../../../../Hooks/usePopular";
 import Title from "../../../../../ReUsable/Title";
 import { Link } from "react-router-dom";
 import MovieCard from "../../../../../ReUsable/MovieCard";
+import useWatchMovie from "../../../../../Hooks/useWatchMovie";
 
 const Popular = () => {
     const [popular, loading, ] = usePopular(1);
-
+    const [watchMovie] = useWatchMovie()
+    console.log(watchMovie)
     return (
         <div className="">
             <Title title="Popular Now"></Title>

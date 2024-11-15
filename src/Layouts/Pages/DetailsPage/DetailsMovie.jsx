@@ -20,8 +20,9 @@ const DetailsMovie = () => {
             {
                         creditloading  ? <span className="loading loading-bars w-full"></span> :
                         <div className="flex flex-col md:flex-row justify-center items-center md:items-start px-3 gap-5 md:gap-3">
-                            <div className="md:w-1/3 flex flex-col items-start gap-3">
+                            <div className="md:w-1/3 flex flex-col items-center justify-center gap-3">
                                 <img className="h-[450px] rounded-lg" src={`https://image.tmdb.org/t/p/original${info.poster_path? info.poster_path : info.backdrop_path}`} alt="" />
+                                <div className="flex flex-col justify-start items-start gap-2">
                                 <h1 className="text-xl text-info">{info.title}</h1>
                                 <p className="text-accent text-sm font-thin">{info.tagline}</p>
                                 <div className="flex items-center">
@@ -29,6 +30,7 @@ const DetailsMovie = () => {
                                     <p className=" text-accent"> {info.runtime} min</p>
                                 </div>
                                 <div className="badge badge-secondary  badge-outline">{info.status}</div>
+                                </div>
                             </div>
                             <div className="w-full md:w-2/3">
                                 <p className="text-info text-justify text-lg"><span className="font-semibold text-accent">Movie Overview :</span> {info.overview}</p>

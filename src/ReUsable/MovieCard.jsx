@@ -32,11 +32,11 @@ const MovieCard = ({item}) => {
                         <div className="px-[5%] py-[4%] text-center  text-red-500">
                             <motion.h2 initial={{color: '#5bf0fb'}} animate={{color: '#fd3ae3'}} transition={{duration: 2, repeat: Infinity, repeatType: 'reverse', ease: 'easeInOut'}} className="font-semibold text-2xl py-[5%]">{item.title}</motion.h2>
                             <div className="flex justify-center items-center gap-3 my-4">
-                                    <motion.div initial={{borderColor: '#f506f9'}} animate={{borderColor: '#ff0505'}} transition={{duration: 2, repeat: Infinity, repeatType: 'reverse', ease: 'easeInOut'}} className="absolute top-[200px] left-[5%] bg-black bg-opacity-20 backdrop-blur-md px-[2%] py-2 rounded-lg flex justify-center items-center gap-1 border-x-2">
+                                    <motion.div initial={{borderColor: '#f506f9'}} animate={{borderColor: '#ff0505'}} transition={{duration: 2, repeat: Infinity, repeatType: 'reverse', ease: 'easeInOut'}} className="absolute top-[200px] left-[5%] bg-black bg-opacity-50 backdrop-blur-md px-[2%] py-2 rounded-lg flex justify-center items-center gap-1 border-x-2">
                                         <p className="text-info font-semibold">{Math.round(item.vote_average)}/10</p>
                                         <AiTwotoneStar className="text-accent"></AiTwotoneStar>
                                     </motion.div>
-                                    <motion.div initial={{borderColor: '#ff0505'}} animate={{borderColor: '#78de12'}} transition={{duration: 2, repeat: Infinity, repeatType: 'reverse', ease: 'easeInOut'}} className="absolute top-[200px] right-[5%] bg-black bg-opacity-20 backdrop-blur-md px-3 py-2 rounded-lg flex justify-center items-center gap-1 border-x-2">
+                                    <motion.div initial={{borderColor: '#ff0505'}} animate={{borderColor: '#78de12'}} transition={{duration: 2, repeat: Infinity, repeatType: 'reverse', ease: 'easeInOut'}} className="absolute top-[200px] right-[5%] bg-black bg-opacity-50 backdrop-blur-md px-3 py-2 rounded-lg flex justify-center items-center gap-1 border-x-2">
                                         <p className="text-info font-semibold">Liked : {item.vote_count}</p>
                                         <AiTwotoneHeart className="text-red-700"></AiTwotoneHeart>
                                     </motion.div>
