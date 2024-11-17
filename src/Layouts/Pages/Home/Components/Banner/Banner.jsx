@@ -22,7 +22,7 @@ const Banner = () => {
      }
     return (
         <>
-        <div className='text-center md:h-[100vh]'>
+        <div className='text-center h-[100vh]'>
         <Swiper
           spaceBetween={30}
           centeredSlides={true}
@@ -42,7 +42,7 @@ const Banner = () => {
             loading ? <span className="loading loading-bars w-full"></span> :
           trendings.results.map(trending => 
             <SwiperSlide key={trending.id} trending={trending}>
-                <div onClick={()=> viewDetails(trending.id)}  className='relative md:h-[88vh] '>
+                <div onClick={()=> viewDetails(trending.id)}  className='relative '>
                     <img className='md:w-[100vw] slider-img ' src={`https://image.tmdb.org/t/p/original${trending.backdrop_path}`} alt="" />
                     <img className='md:w-[100vw] md:hidden ' src={`https://image.tmdb.org/t/p/original${trending.poster_path}`} alt="" />
                         <div className=' hidden absolute top-[80%] md:top-[40%] z-20 font-mono md:w-2/5 left-[3%] md:left-[10%] md:flex flex-row md:flex-col justify-between gap-10 md:gap-5 text-left md:px-5 px-0 back'>

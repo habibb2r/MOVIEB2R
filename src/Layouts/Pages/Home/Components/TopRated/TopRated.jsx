@@ -5,6 +5,9 @@ import CardTop from "./CardTop";
 
 const TopRated = () => {
     const [topRated, loading, refetch] = useTopRated()
+    if(loading){
+        return <p><span className="loading loading-bars w-full"></span></p>
+    }
     console.log('Top',topRated)
     return (
         <div>
