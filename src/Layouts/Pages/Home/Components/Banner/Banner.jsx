@@ -27,7 +27,7 @@ const Banner = () => {
           spaceBetween={30}
           centeredSlides={true}
           autoplay={{
-            delay: 3000,
+            delay: 4000,
             disableOnInteraction: false,
           }}
           pagination={{
@@ -53,7 +53,7 @@ const Banner = () => {
                                 <AiFillLike className='text-2xl text-accent'></AiFillLike>
                                 <p className='text-lg font-semibold text-info'>{trending.vote_average}</p>
                                </div>
-                                <button className='md:block hidden btn btn-accent text-4xl text-black font-semibold'><MdVideoCameraBack></MdVideoCameraBack></button>
+                                <button className='md:flex justify-center items-center gap-2 hidden btn btn-accent text-4xl text-black font-semibold'> <span className='text-xl'>Watch Now</span> <MdVideoCameraBack></MdVideoCameraBack></button>
                             </div>
                         </div>
                         <div className=' trendingsShield'></div>

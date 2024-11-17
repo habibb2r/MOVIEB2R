@@ -1,9 +1,10 @@
 import React from 'react';
 
 const CardTop = ({item}) => {
+    console.log(item)
     return (
         <div>
-            <h1>{item.title}</h1>
+            <img className='' src={`https://image.tmdb.org/t/p/original${item.poster_path}`} alt="" />
         </div>
     );
 };
