@@ -41,7 +41,7 @@ const TopRated = () => {
       >
         { topRated?.results.map((item, index) => (
           <SwiperSlide key={item.id} virtualIndex={index}>
-            <CardTop item={item}></CardTop>
+            <CardTop item={item} index={index + 1}></CardTop>
           </SwiperSlide>
         ))}
       </Swiper>
