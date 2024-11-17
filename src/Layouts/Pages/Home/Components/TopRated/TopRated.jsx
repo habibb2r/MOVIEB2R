@@ -27,6 +27,7 @@ const TopRated = () => {
     return (
         <div>
             <Title title={'Top Rated Movies'}></Title>
+            <div className="hidden md:flex">
             <Swiper
         modules={[Virtual, Navigation, Pagination]}
         
@@ -44,8 +45,29 @@ const TopRated = () => {
             <CardTop item={item} index={index + 1}></CardTop>
           </SwiperSlide>
         ))}
-      </Swiper>
+            </Swiper>
+            </div>
             
+            <div className=" flex md:hidden">
+            <Swiper
+        modules={[Virtual, Navigation, Pagination]}
+        
+        slidesPerView={1}
+        centeredSlides={true}
+        spaceBetween={30}
+        pagination={{
+          type: 'fraction',
+        }}
+        navigation={true}
+        virtual
+      >
+        { topRated?.results.map((item, index) => (
+          <SwiperSlide key={item.id} virtualIndex={index}>
+            <CardTop item={item} index={index + 1}></CardTop>
+          </SwiperSlide>
+        ))}
+            </Swiper>
+            </div>
             
         </div>
     );
