@@ -5,6 +5,7 @@ import { AiTwotoneHeart, AiTwotoneStar } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import "./Popular.css";
 import MovieCard from "../../../ReUsable/MovieCard";
+import {motion} from 'framer-motion'
 
 
 const PagePopular = () => {
@@ -25,27 +26,13 @@ const PagePopular = () => {
             ))
           )}
         </div>
-        <div className="flex justify-center items-center gap-2">
-          <div className="join">
-            <button
-              onClick={() => {
-                setPage(page - 1), refetch();
-              }}
-              className="join-item btn"
-            >
-              «
-            </button>
-            <button className="join-item btn">Page {page}</button>
-            <button
-              onClick={() => {
-                setPage(page + 1), refetch();
-              }}
-              className="join-item btn"
-            >
-              »
-            </button>
-          </div>
-        </div>
+        <div className="flex justify-center items-center gap-2 py-[2%]">
+      <div className="join">
+        <motion.button initial={{borderColor: '#ff6b6b'}} animate={{borderColor: '#ff0597'}} transition={{duration: 3, repeat: Infinity, repeatType: 'reverse', ease: 'easeInOut'}} onClick={()=> {setPage(page - 1), refetch()}} className="join-item btn border-2 border-white">«</motion.button>
+        <motion.button initial={{borderColor: '#4d79ff'}} animate={{borderColor: '#1443ff'}} transition={{duration: 3, repeat: Infinity, repeatType: 'reverse', ease: 'easeInOut'}} className="join-item btn border-2 border-white">Page {page}</motion.button>
+        <motion.button initial={{borderColor: '#49d30d'}} animate={{borderColor: '#00e1ff'}} transition={{duration: 3, repeat: Infinity, repeatType: 'reverse', ease: 'easeInOut'}} onClick={()=> {setPage(page + 1), refetch()}} className="join-item btn border-2 border-white">»</motion.button>
+      </div>
+      </div>
       </div>
     </div>
   );
