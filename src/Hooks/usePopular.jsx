@@ -3,6 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 
 const usePopular = (num) => {
   const key = import.meta.env.VITE_AUTHKEYMOVIE
+  
     const {data : popular= [],  isLoading: loading, refetch } = useQuery({
         queryKey: ['popular'],
         queryFn: async()=>{
@@ -13,7 +14,7 @@ const usePopular = (num) => {
                   Authorization: `${key}`
                 }
               };
-              const res = await fetch(`${import.meta.env.VITE_MOVIELINK}/3/movie/popular?language=en-US&page=${num}`, options);
+              const res = await fetch(`${import.meta.env.VITE_MOVIELINK}/3/movie/popular?language=en-US&page=${num? num : 1}`, options);
               return res.json();
         }
     })
