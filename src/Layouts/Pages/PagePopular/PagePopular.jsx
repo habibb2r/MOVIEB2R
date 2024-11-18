@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import "./Popular.css";
 import MovieCard from "../../../ReUsable/MovieCard";
 
+
 const PagePopular = () => {
     const [page, setPage] = useState(1)
   const [popular, loading, refetch] = usePopular(page);
@@ -19,7 +20,7 @@ const PagePopular = () => {
           {loading ? (
             <span className="loading loading-bars w-full"></span>
           ) : (
-            popular.results.map((item) => (
+            popular?.results?.map((item) => (
               <MovieCard key={item.id} item={item}></MovieCard>
             ))
           )}
