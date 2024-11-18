@@ -6,6 +6,7 @@ import DetailsMovie from "../Layouts/Pages/DetailsPage/DetailsMovie";
 import Signin from "../Layouts/Pages/Account/Signin";
 import Signup from "../Layouts/Pages/Account/Signup";
 import FavoriteList from "../Layouts/Pages/FavoriteList/FavoriteList";
+import PageTopRated from "../Layouts/Pages/PageTopRated/PageTopRated";
 
 
 export const router = createBrowserRouter([
@@ -20,6 +21,10 @@ export const router = createBrowserRouter([
         {
           path: 'popular',
           element: <PagePopular></PagePopular>
+        },
+        {
+          path: 'toprated',
+          element: <PageTopRated></PageTopRated>
         },
         {
           path: 'details/:id',

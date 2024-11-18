@@ -22,7 +22,7 @@ const Navbar = () => {
                 <a>Movies</a>
                 <ul className="p-2">
                 <li><NavLink to='/popular'>Popular</NavLink></li>
-                <li><NavLink to='/popular'>Popular</NavLink></li>
+                <li><NavLink to='/toprated'>Top Rated</NavLink></li>
                 <li><NavLink to='/popular'>Popular</NavLink></li>
                   
                 </ul>
@@ -40,7 +40,7 @@ const Navbar = () => {
                 <summary>Movies</summary>
                 <ul className="p-2 w-[200px]">
                   <li><NavLink to='/popular'>Popular</NavLink></li>
-                  <li><NavLink to='/popular'>Top Rated</NavLink></li>
+                  <li><NavLink to='/toprated'>Top Rated</NavLink></li>
                   <li><NavLink to='/popular'>Popular</NavLink></li>
                 
                 </ul>
